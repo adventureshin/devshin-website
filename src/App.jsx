@@ -213,7 +213,7 @@ function App() {
             </h1>
             <p className="text-xl md:text-2xl text-slate-600 max-w-2xl mb-10 leading-relaxed">
               성실함과 책임감을 바탕으로 <br className="hidden md:block" />
-              주어진 프로젝트늘 120%로 만드는 것에 열정을 가지고 있습니다.
+              주어진 프로젝트를 120%로 만드는 것에 열정을 가지고 있습니다.
             </p>
             <div className="flex flex-wrap gap-4">
               <a href="#projects" className="px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/30">
