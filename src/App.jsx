@@ -432,7 +432,7 @@ function App() {
         <div className="max-w-6xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <span className="text-xl font-bold text-white tracking-tight">DevShin</span>
-            <p className="text-sm mt-2">Building every project with full responsibility.</p>
+            <p className="text-sm mt-2">Taking ownership of every line of code.</p>
           </div>
           <div className="flex space-x-6">
             <a href="mailto:sdhkygg@gmail.com" className="hover:text-white transition-colors">
