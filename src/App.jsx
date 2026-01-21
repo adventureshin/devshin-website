@@ -347,7 +347,7 @@ function App() {
             links={[]} // 링크 정보가 없어서 비워둠
           />
 
-          <ProjectCard 
+          <ProjectCard
             title="이등급 사관학원"
             description="강의 영상과 문제들로 이루어진 수학 교습 프로그램입니다. 학생별 맞춤형 학습을 위한 알고리즘을 구현했습니다."
             image="inbrain.webp"
@@ -357,7 +357,22 @@ function App() {
               "AWS Cloud 인프라 구축 및 운영"
             ]}
             tags={["Django", "AWS", "Full Stack"]}
-            links={[]} // 링크 정보가 없어서 비워둠
+            links={[]}
+          />
+
+          <ProjectCard
+            title="업힐 - 학생 문제 풀이 앱"
+            description="학생들이 문제를 풀고 풀이에 따른 피드백을 받는 앱입니다. React Native와 FastAPI를 활용한 풀스택 개발을 진행했습니다."
+            image="/uphill.webp"
+            details={[
+              "React Native Bridge를 통해 애플 펜슬 풀이 기능 구현",
+              "선생님용 관리자 페이지 React(vite)로 제작",
+              "FastAPI 기반 API 서버 및 AWS 인프라 구축"
+            ]}
+            tags={["FastApi", "React Native", "React", "AWS"]}
+            links={[
+              { type: "App Store", url: "https://apps.apple.com/kr/app/%EC%97%85%ED%9E%90/id6756876879", icon: <Smartphone size={20} /> }
+            ]}
           />
         </div>
       </Section>
