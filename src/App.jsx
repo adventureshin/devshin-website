@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Github, 
   Mail, 
   Server, 
-  Database, 
   Cloud, 
   Code, 
   ExternalLink, 
@@ -103,11 +101,24 @@ const ProjectCard = ({ title, description, tags, links, image, details }) => (
   </motion.div>
 );
 
-const ExperienceItem = ({ role, company, period, projects }) => (
+const ExperienceItem = ({ role, company, period, projects, website }) => (
   <div className="border-l-2 border-slate-200 pl-8 pb-12 relative last:pb-0">
     <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-sm"></div>
     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-      <h3 className="text-xl font-bold text-slate-800">{company}</h3>
+      <div>
+        <h3 className="text-xl font-bold text-slate-800">{company}</h3>
+        {website && (
+          <a
+            href={website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-primary transition-colors"
+          >
+            <ExternalLink size={14} />
+            {website}
+          </a>
+        )}
+      </div>
       <span className="text-sm text-slate-500 font-medium bg-slate-100 px-3 py-1 rounded-full w-fit mt-2 sm:mt-0">{period}</span>
     </div>
     <p className="text-lg text-primary font-medium mb-4">{role}</p>
@@ -237,9 +248,26 @@ function App() {
             </div>
             <div className="space-y-2">
               <ExperienceItem 
+                role="소프트웨어 엔지니어"
+                company="(주) 콘텐츠 테크놀로지스"
+                period="2026.03 - Present"
+                website="https://contentstech.com/"
+                projects={[
+                  {
+                    name: "",
+                    details: [
+                      "본사와 자회사에서 사용하는 소프트웨어 개발",
+                      "업무 자동화를 위한 내부 도구와 시스템 개발",
+                      "Rust와 Linux 기반으로 서버를 구축하고 실행 파일 제작",
+                      "SolidJS로 UI/UX를 고려한 웹 서비스 개발"
+                    ]
+                  }
+                ]}
+              />
+              <ExperienceItem 
                 role="프리랜서 개발자"
-                company="Freelancer"
-                period="2025.12 - Present"
+                company="프리랜서"
+                period="2025.12 - 2026.02"
                 projects={[
                   {
                     name: "DecoMyTree 서버 유지 보수",
@@ -265,8 +293,10 @@ function App() {
                   {
                     name: "", // 프로젝트 이름이 따로 없다면 빈 문자열
                     details: [
-                      "10개 이상의 다양한 서비스 API 서버 및 인프라 구축",
-                      "대규모 트래픽 처리를 위한 아키텍처 설계 및 최적화"
+                      "사내 유일한 백엔드 개발자로 근무",
+                      "10개 이상의 다양한 서비스에서 API 서버 설계, 개발, 배포를 단독으로 수행",
+                      "모든 프로젝트의 서버 구축과 인프라 세팅을 전담",
+                      "아키텍처 설계, 운영 환경 구성, 성능 최적화까지 end-to-end로 담당"
                     ]
                   }
                 ]}
@@ -386,7 +416,7 @@ function App() {
             </div>
             <h3 className="text-xl font-bold mb-4 text-slate-800">Backend</h3>
             <div className="flex flex-wrap gap-2">
-              {['Python', 'Django', 'FastAPI', 'Golang', 'Fiber'].map(skill => (
+              {['Python', 'Django', 'FastAPI', 'Golang', 'Fiber', 'Rust'].map(skill => (
                 <span key={skill} className="px-3 py-1 bg-white border border-slate-200 rounded-md text-sm font-medium text-slate-600">
                   {skill}
                 </span>
@@ -400,7 +430,7 @@ function App() {
             </div>
             <h3 className="text-xl font-bold mb-4 text-slate-800">Infrastructure & DB</h3>
             <div className="flex flex-wrap gap-2">
-              {['AWS', 'PostgreSQL', 'MySQL', 'Redis', 'Docker'].map(skill => (
+              {['AWS', 'Linux', 'PostgreSQL', 'MySQL', 'Redis', 'Docker'].map(skill => (
                 <span key={skill} className="px-3 py-1 bg-white border border-slate-200 rounded-md text-sm font-medium text-slate-600">
                   {skill}
                 </span>
@@ -414,7 +444,7 @@ function App() {
             </div>
             <h3 className="text-xl font-bold mb-4 text-slate-800">Frontend & Others</h3>
             <div className="flex flex-wrap gap-2">
-              {['React', 'React Native', 'JavaScript', 'Git', 'Datadog'].map(skill => (
+              {['SolidJS', 'React', 'React Native', 'JavaScript', 'Git', 'Datadog'].map(skill => (
                 <span key={skill} className="px-3 py-1 bg-white border border-slate-200 rounded-md text-sm font-medium text-slate-600">
                   {skill}
                 </span>
