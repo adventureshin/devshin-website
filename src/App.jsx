@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Mail, 
-  Server, 
-  Cloud, 
+import {
+  Mail,
+  Server,
+  Cloud,
   Code, 
   ExternalLink, 
   Menu, 
@@ -14,6 +14,14 @@ import {
   Smartphone,
   Globe
 } from 'lucide-react';
+
+const resolveAssetPath = (path) => {
+  if (!path || /^(?:[a-z]+:)?\/\//i.test(path)) {
+    return path;
+  }
+
+  return `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+};
 
 const Section = ({ id, title, children, className = "" }) => (
   <section id={id} className={`py-20 px-6 md:px-12 lg:px-24 ${className}`}>
@@ -46,7 +54,7 @@ const ProjectCard = ({ title, description, tags, links, image, details }) => (
     <div className="h-64 overflow-hidden bg-slate-50 relative group flex items-center justify-center p-4">
       {image ? (
         <img 
-          src={image} 
+          src={resolveAssetPath(image)} 
           alt={title} 
           className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105" 
         />
