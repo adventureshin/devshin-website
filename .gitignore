@@ -16,3 +16,5 @@ stats.html
 
 extra_data/
 
+# Temporary static rendering bundle
+.prerender/
